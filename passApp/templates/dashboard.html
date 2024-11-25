@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager with Checkup</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1>Password Manager</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <button id="fetchButton">Fetch Passwords</button>
+        
+        <!-- Passwords Container -->
+        <div id="resultContainer" class="hidden">
+            <h2>Passwords</h2>
+            <ul id="dataList">
+                <!-- Fetched data will be appended here -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Password Checkup Modal -->
+    <div id="checkupModal" class="hidden">
+        <div class="modal-content">
+            <h3>Password Checkup</h3>
+            <p id="checkupResult"></p>
+            <button id="closeModal">Close</button>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

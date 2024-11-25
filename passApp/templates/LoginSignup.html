@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create an Account or Log In</title>
+  <link rel="stylesheet" href="/static/LoginSignup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+        
+        <a href="#" class="back-button"></a>
+        <div class="hero-text">
+          <h1></h1>
+        </div>
+      </div>
+      
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <!-- Signup Form -->
+      <form id="signup-form" class="auth-form">
+        <h2>Create an account</h2>
+        <p>Already have an account? <a href="#" id="show-login">Log in</a></p>
+        <div class="form-group">
+          <input type="text" id="first-name" placeholder="First name" required>
+          <input type="text" id="last-name" placeholder="Last name" required>
+        </div>
+        <input type="username" id="username" placeholder="Username" required>
+        <div class="password-group">
+          <input type="password" id="signup-password" placeholder="Enter your password" required>
+          <span class="password-toggle" onclick="togglePasswordVisibility('signup-password')">👁️</span>
+        </div>
+        <div class="checkbox-group">
+          <input type="checkbox" id="terms" required>
+          <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
+        </div>
+        <button type="button" onclick="registerAccount()"><a href="dashboard.html">Create account</a></button>
+        
+      </form>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form hidden">
+        <h2>Log in</h2>
+        <p>Don't have an account? <a href="#" id="show-signup">Create one</a></p>
+        <input type="username" id="username" placeholder="username" required>
+        <div class="password-group">
+          <input type="password" id="login-password" placeholder="Enter your password" required>
+          <span class="password-toggle" onclick="togglePasswordVisibility('login-password')">👁️</span>
+        </div>
+        <button type="button" onclick="login()"><a href="dashboard.html">Login in</button></button>
+        
+      </form>
+    </div>
+  </div>
+
+  <script>
+
+// script.js
+
+// Dummy user data (for demo purposes)
+const users = [];
+
+// Toggle between Signup and Login forms
+document.getElementById('show-login').addEventListener('click', function () {
+  document.getElementById('signup-form').classList.add('hidden');
+  document.getElementById('login-form').classList.remove('hidden');
+});
+
+document.getElementById('show-signup').addEventListener('click', function () {
+  document.getElementById('signup-form').classList.remove('hidden');
+  document.getElementById('login-form').classList.add('hidden');
+});
+
+// Password visibility toggle
+function togglePasswordVisibility(id) {
+  const passwordField = document.getElementById(id);
+  passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
+}
+
+// Register account
+function registerAccount() {
+  const firstName = document.getElementById('first-name').value;
+  const lastName = document.getElementById('last-name').value;
+  const email = document.getElementById('signup-email').value;
+  const password = document.getElementById('signup-password').value;
+
+  if (firstName && lastName && email && password) {
+    users.push({ email, password });
+    alert('Account created successfully!');
+    document.getElementById('signup-form').reset();
+  } else {
+    alert('Please fill out all fields.');
+  }
+}
+
+// Log in
+function login() {
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+
+  const user = users.find(user => user.email === email && user.password === password);
+  if (user) {
+    alert('Login successful!');
+    document.getElementById('login-form').reset();
+  } else {
+    alert('Invalid email or password.');
+  }
+}
+
+  </script>
+</body>
+</html>

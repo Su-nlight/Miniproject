@@ -1,0 +1,148 @@
+/* styles.css */
+a:link{
+  color: aliceblue;
+  text-decoration: none;
+}
+a:hover{
+  color: #040D12;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2D4356;
+    color: white;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .left-panel {
+    flex: 1;
+    background: url('login.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+    text-align: left;
+  }
+
+  /* .left-panel .logo-img {
+    width: 150px; /* Adjust the size as needed */
+    /* height: auto;
+    margin-bottom: 20px; Add spacing below the logo
+  }
+   */ */
+  
+   .left-panel .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  } 
+   
+  .back-button {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-bottom: auto;
+  }
+  
+  .hero-text {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .right-panel {
+    flex: 1;
+    background: #435B66;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .signup-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .signup-form h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .signup-form p {
+    font-size: 0.9em;
+    color: #ccc;
+  }
+  
+  .signup-form p a {
+    color: #6c63ff;
+    text-decoration: none;
+  }
+  
+  .form-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  input[type="text"], input[type="username"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .password-group {
+    position: relative;
+  }
+  
+  .password-group .password-toggle {
+    position: absolute;
+    right: 2px;
+    top: 30%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .checkbox-group input {
+    margin-right: 10px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #6c63ff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+.hidden {
+    display: none;
+  }
+  
+  /* Adjust alignment for the auth forms */
+  .auth-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .auth-form button {
+    margin-top: 10px;
+  }
+  
